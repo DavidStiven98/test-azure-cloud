@@ -21,8 +21,8 @@ jobs:
         run:  php -l  index.php
       
       - name: Deploy  to  Azure App Service
-      - uses: azure/webapps-deploy@v2
-      - with:
-        app-name: app-cloud-da
-        publish-profile:  ${{secrets.AZURE_PUBLISH_PROFILE}}
-        package:  .
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: app-cloud-da
+          publish-profile:  ${{secrets.AZURE_PUBLISH_PROFILE}}
+          package:  .
