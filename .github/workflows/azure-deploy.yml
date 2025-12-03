@@ -6,7 +6,7 @@ on:
       - main
 jobs:
   build-and-deploy:
-    runs-on:  ubuntu-lastest
+    runs-on: ubuntu-lastest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -16,13 +16,12 @@ jobs:
         with:
           php-version: '8.4'
       
-
       - name: Run basic PHP lint
-        run:  php -l  index.php
+        run: php -l  index.php
       
       - name: Deploy  to  Azure App Service
         uses: azure/webapps-deploy@v2
         with:
           app-name: app-cloud-da
-          publish-profile:  ${{secrets.AZURE_PUBLISH_PROFILE}}
-          package:  .
+          publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
+          package: .
