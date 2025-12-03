@@ -6,7 +6,7 @@ on:
       - main
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -17,7 +17,7 @@ jobs:
           php-version: '8.4'
       
       - name: Run basic PHP lint
-        run: php -l  index.php
+        run: php -l index.php
       
       - name: Deploy  to  Azure App Service
         uses: azure/webapps-deploy@v2
